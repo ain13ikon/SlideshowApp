@@ -51,6 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="2wE-EU-jPb" id="ABW-1H-FT1"/>
                         <outlet property="playStopButton" destination="pUw-VB-XOW" id="bYI-Sz-HYK"/>
                     </connections>
                 </viewController>

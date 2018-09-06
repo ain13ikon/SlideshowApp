@@ -10,13 +10,39 @@ import UIKit
 
 class ViewController: UIViewController {
     var playing_Flag: Bool! = false
+    //var images_ = []
     var imageNumber = 0
-    var image_Max: Int! = 4   //枚数−1
+    //var image_Max: Int!
+    var image_Max_Number: Int!  //枚数−１
+    var images_: [UIImage] = []
+    var imageFileName = ["犬1.jpg", "犬2.jpg", "犬3.jpg"]
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var playStopButton: UIButton!
     
+    //画像の読み込み
+    private func initImageView(){
+        /*
+        for i in 1...3 {
+            let fileName = "犬\(i).jpg"
+            let image: UIImage! = UIImage(named: fileName)
+            images_.append(image)
+        }
+        */
+        
+        for fileName in imageFileName {
+            let image: UIImage! = UIImage(named: fileName)
+            images_.append(image)
+        }
+        image_Max_Number = imageFileName.count - 1
+        print("デバッグ：　image_Max_Number = \(image_Max_Number)")
+        imageView.image = images_[0]
+    }
+    
     func previewImage(){
         print("デバッグ：　\(imageNumber)番目の画像を表示")
+        imageView.image = images_[imageNumber]
     }
     
     func changePlayStop(){
@@ -36,7 +62,7 @@ class ViewController: UIViewController {
     @IBAction func beforeImage() {
         imageNumber -= 1
         if imageNumber < 0 {
-            imageNumber = image_Max
+            imageNumber = image_Max_Number
         }
         
         previewImage()
@@ -44,7 +70,7 @@ class ViewController: UIViewController {
     
     @IBAction func nextImage() {
         imageNumber += 1
-        if imageNumber > image_Max {
+        if imageNumber > image_Max_Number {
             imageNumber = 0
         }
         
@@ -54,6 +80,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        initImageView()
         
         /*
         self.playing_Flag = false

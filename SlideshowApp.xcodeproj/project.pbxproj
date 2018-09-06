@@ -12,6 +12,9 @@
 		71487DA4213FD0B300238CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71487DA2213FD0B300238CFA /* Main.storyboard */; };
 		71487DA6213FD0B600238CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71487DA5213FD0B600238CFA /* Assets.xcassets */; };
 		71487DA9213FD0B600238CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71487DA7213FD0B600238CFA /* LaunchScreen.storyboard */; };
+		71F593172140BF2B004F710F /* 犬3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71F593142140BF2B004F710F /* 犬3.jpg */; };
+		71F593182140BF2B004F710F /* 犬2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71F593152140BF2B004F710F /* 犬2.jpg */; };
+		71F593192140BF2B004F710F /* 犬1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71F593162140BF2B004F710F /* 犬1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		71487DA5213FD0B600238CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71487DA8213FD0B600238CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71487DAA213FD0B600238CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71F593142140BF2B004F710F /* 犬3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "犬3.jpg"; sourceTree = "<group>"; };
+		71F593152140BF2B004F710F /* 犬2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "犬2.jpg"; sourceTree = "<group>"; };
+		71F593162140BF2B004F710F /* 犬1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "犬1.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,9 @@
 			children = (
 				71487D9D213FD0B300238CFA /* SlideshowApp */,
 				71487D9C213FD0B300238CFA /* Products */,
+				71F593162140BF2B004F710F /* 犬1.jpg */,
+				71F593152140BF2B004F710F /* 犬2.jpg */,
+				71F593142140BF2B004F710F /* 犬3.jpg */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F593182140BF2B004F710F /* 犬2.jpg in Resources */,
+				71F593172140BF2B004F710F /* 犬3.jpg in Resources */,
+				71F593192140BF2B004F710F /* 犬1.jpg in Resources */,
 				71487DA9213FD0B600238CFA /* LaunchScreen.storyboard in Resources */,
 				71487DA6213FD0B600238CFA /* Assets.xcassets in Resources */,
 				71487DA4213FD0B300238CFA /* Main.storyboard in Resources */,

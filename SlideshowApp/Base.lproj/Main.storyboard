@@ -25,7 +25,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-3o-vMd">
                                 <rect key="frame" x="251" y="493" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="進む&gt;"/>
+                                <state key="normal" title="進む&gt;">
+                                    <color key="titleColor" red="0.72156862745098038" green="0.47450980392156861" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="nextImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSO-vZ-7zj"/>
                                 </connections>
@@ -33,7 +35,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUw-VB-XOW">
                                 <rect key="frame" x="145" y="493" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="再生"/>
+                                <state key="normal" title="再生">
+                                    <color key="titleColor" red="0.72156862745098038" green="0.47450980392156861" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="playStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QgO-jB-Fj9"/>
                                 </connections>
@@ -41,7 +45,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9To-ah-mBS">
                                 <rect key="frame" x="16" y="493" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="&lt;戻る"/>
+                                <state key="normal" title="&lt;戻る">
+                                    <color key="titleColor" red="0.69411764705882351" green="0.47450980392156861" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="beforeImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJ0-wR-1J7"/>
                                 </connections>
@@ -51,7 +57,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="9To-ah-mBS" id="Py9-Ui-xol"/>
                         <outlet property="imageView" destination="2wE-EU-jPb" id="ABW-1H-FT1"/>
+                        <outlet property="nextButton" destination="3yG-3o-vMd" id="Q8g-DD-Bk8"/>
                         <outlet property="playStopButton" destination="pUw-VB-XOW" id="bYI-Sz-HYK"/>
                     </connections>
                 </viewController>
@@ -59,20 +67,31 @@
             </objects>
             <point key="canvasLocation" x="116.25" y="117.25352112676056"/>
         </scene>
-        <!--View Controller-->
+        <!--Big Image-->
         <scene sceneID="19m-ii-yei">
             <objects>
-                <viewController id="2VE-q5-SB6" sceneMemberID="viewController">
+                <viewController id="2VE-q5-SB6" customClass="BigImage" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="21V-aO-in2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNr-E8-EnH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJO-GK-aW3">
+                                <rect key="frame" x="145" y="518" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="戻る"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wOZ-Aa-bc9"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdq-FI-Otz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799" y="117"/>
+            <point key="canvasLocation" x="798.75" y="116.19718309859155"/>
         </scene>
     </scenes>
 </document>

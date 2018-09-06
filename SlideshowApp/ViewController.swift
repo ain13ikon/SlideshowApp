@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func imageViewTapped(_ sender: Any) {
-        print("デバッグ：　画像がタップされました")
+        print("デバッグ：　\(imageNumber)の画像がタップされました")
+        performSegue(withIdentifier: "slideTobig", sender: imageNumber)
     }
     
     //画像の読み込み
@@ -157,7 +158,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    //bigImageから戻った時
+    @IBAction func unwind(_ segue: UIStoryboardSegue){
+    }
 
 }
 

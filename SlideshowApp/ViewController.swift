@@ -27,6 +27,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBAction func imageViewTapped(_ sender: Any) {
+        print("デバッグ：　画像がタップされました")
+    }
+    
     //画像の読み込み
     private func initImageView(){
         for fileName in imageFileName {
@@ -120,12 +124,24 @@ class ViewController: UIViewController {
         previewImage()
     }
     
+    /*
+    @objc func imageViewTapped(_ sender: UITapGestureRecognizer){
+        print("デバッグ：　タップされました")
+    }
+    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         initImageView()
         
+        
+        //imageViewのタップをオンに
+        /*
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:))))
+        */
         /*
         self.playing_Flag = false
         playStopButton.setTitle("再生", for: .normal)

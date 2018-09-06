@@ -18,9 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-EU-jPb">
-                                <rect key="frame" x="37" y="20" width="246" height="399"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-EU-jPb">
+                                <rect key="frame" x="37" y="67" width="246" height="352"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ihc-RP-Xxp" appends="YES" id="sU3-Kh-9hh"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-3o-vMd">
                                 <rect key="frame" x="251" y="493" width="41" height="30"/>
@@ -58,12 +62,18 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="9To-ah-mBS" id="Py9-Ui-xol"/>
-                        <outlet property="imageView" destination="2wE-EU-jPb" id="ABW-1H-FT1"/>
+                        <outlet property="imageView" destination="2wE-EU-jPb" id="Jz3-X9-S2A"/>
                         <outlet property="nextButton" destination="3yG-3o-vMd" id="Q8g-DD-Bk8"/>
                         <outlet property="playStopButton" destination="pUw-VB-XOW" id="bYI-Sz-HYK"/>
+                        <segue destination="2VE-q5-SB6" kind="show" id="Lt9-8l-Xje"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ihc-RP-Xxp">
+                    <connections>
+                        <action selector="imageViewTapped:" destination="BYZ-38-t0r" id="jVo-Vk-b3F"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="116.25" y="117.25352112676056"/>
         </scene>

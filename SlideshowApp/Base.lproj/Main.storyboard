@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2wE-EU-jPb">
-                                <rect key="frame" x="50" y="100" width="220" height="308"/>
+                                <rect key="frame" x="50" y="80" width="380" height="80"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="ihc-RP-Xxp" appends="YES" id="sU3-Kh-9hh"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yG-3o-vMd">
-                                <rect key="frame" x="229" y="488" width="41" height="30"/>
+                                <rect key="frame" x="389" y="240" width="41" height="30"/>
                                 <state key="normal" title="進む&gt;">
                                     <color key="titleColor" red="0.72156862745098038" green="0.47450980392156861" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -35,7 +35,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUw-VB-XOW">
-                                <rect key="frame" x="144.5" y="488" width="31" height="30"/>
+                                <rect key="frame" x="224.5" y="240" width="31" height="30"/>
                                 <state key="normal" title="再生">
                                     <color key="titleColor" red="0.72156862745098038" green="0.47450980392156861" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9To-ah-mBS">
-                                <rect key="frame" x="50" y="488" width="41" height="30"/>
+                                <rect key="frame" x="50" y="240" width="41" height="30"/>
                                 <state key="normal" title="&lt;戻る">
                                     <color key="titleColor" red="0.69411764705882351" green="0.47450980392156861" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -58,7 +58,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3yG-3o-vMd" secondAttribute="trailing" constant="50" id="4Ky-t2-2fQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pUw-VB-XOW" secondAttribute="bottom" constant="50" id="Fv0-G0-dP0"/>
                             <constraint firstItem="2wE-EU-jPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="JlU-aV-0x5"/>
+                            <constraint firstItem="3yG-3o-vMd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="MRt-Df-PDU"/>
                             <constraint firstItem="9To-ah-mBS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="QHb-fB-q5i"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9To-ah-mBS" secondAttribute="trailing" constant="20" symbolic="YES" id="QPE-gE-q4R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2wE-EU-jPb" secondAttribute="trailing" constant="50" id="RVf-ft-lLk"/>
                             <constraint firstItem="2wE-EU-jPb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="aV5-Su-HYR"/>
                             <constraint firstItem="3yG-3o-vMd" firstAttribute="top" secondItem="pUw-VB-XOW" secondAttribute="top" id="cfl-wg-fUZ"/>
@@ -90,14 +92,14 @@
             <objects>
                 <viewController id="2VE-q5-SB6" customClass="BigImage" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="21V-aO-in2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cNr-E8-EnH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="278"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJO-GK-aW3">
-                                <rect key="frame" x="145" y="531" width="30" height="27"/>
+                                <rect key="frame" x="225" y="283" width="30" height="27"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                 <state key="normal" title="戻る">
                                     <color key="titleColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,10 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     var playing_Flag: Bool! = false
-    //var images_ = []
     var imageNumber = 0
-    //var image_Max: Int!
-    var image_Max_Number: Int!  //枚数−１
+    var image_Max_Number: Int!  //※枚数−１を設定する
     var images_: [UIImage] = []
     var imageFileName = ["cat126IMGL6511_TP_V.jpg", "N825_pocyankawaii_TP_V.jpg", "nuko-2_TP_V.jpg", "nuko-8_TP_V.jpg", "tdog17030720_TP_V.jpg"]
     var slideShow_Timer: Timer!
@@ -26,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var nextButton: UIButton!
+    
     
     //画面遷移の準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,18 +45,6 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "slideTobig", sender: imageNumber)
     }
     
-    //画像の読み込み
-    private func initImageView(){
-        for fileName in imageFileName {
-            let image: UIImage! = UIImage(named: fileName)
-            images_.append(image)
-        }
-        
-        image_Max_Number = imageFileName.count - 1
-        print("デバッグ：　image_Max_Number = \(image_Max_Number)")
-        imageView.image = images_[0]
-    }
-    
     //画像の表示
     func previewImage(){
         print("デバッグ：　\(imageNumber)番目の画像を表示")
@@ -65,18 +52,8 @@ class ViewController: UIViewController {
         imageView.image = images_[imageNumber]
     }
     
-    //スライドショーの表示
-    @objc func slideShowImage() {
-        imageNumber += 1
-        if imageNumber > image_Max_Number {
-            imageNumber = 0
-        }
-        
-        previewImage()
-    }
-    
     //再生・停止の切り替え
-    func changePlayStop(){
+    @IBAction func playStop(_ sender: UIButton) {
         if self.playing_Flag {
             //停止の処理//
             playStopButton.setTitle("再生", for: .normal)
@@ -98,23 +75,18 @@ class ViewController: UIViewController {
             backButton.isEnabled = false
             nextButton.setTitleColor(UIColor.lightGray, for: .normal)
             backButton.setTitleColor(UIColor.lightGray, for: .normal)
- 
             
             //スライドショーを開始
             slideShow_Timer = Timer.scheduledTimer(
                 timeInterval: 2.0,
                 target: self,
-                selector: #selector(slideShowImage),
+                selector: #selector(nextImage),
                 userInfo: nil,
                 repeats: true
             )
-            
         }
         self.playing_Flag = !self.playing_Flag
-    }
-
-    @IBAction func playStop(_ sender: UIButton) {
-        changePlayStop()
+        
     }
     
     //戻るボタンの処理
@@ -131,9 +103,8 @@ class ViewController: UIViewController {
     }
     
     //進むボタンの処理
-    @IBAction func nextImage() {
-        //if slideShowPlaying_Flag {return}
-        
+    //スライドショーで次の画像を表示する
+    @objc @IBAction func nextImage() {
         imageNumber += 1
         if imageNumber > image_Max_Number {
             imageNumber = 0
@@ -142,22 +113,23 @@ class ViewController: UIViewController {
         previewImage()
     }
     
-    /*
-    @objc func imageViewTapped(_ sender: UITapGestureRecognizer){
-        print("デバッグ：　タップされました")
-    }
-    */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         //画像の読み込み
-        initImageView()
+        for fileName in imageFileName {
+            let image: UIImage! = UIImage(named: fileName)
+            images_.append(image)
+        }
+        image_Max_Number = imageFileName.count - 1
+        print("デバッグ：　image_Max_Number = \(image_Max_Number)")
         
-        //slideShowPlaying_Flag = false
         //表示サイズの調整
         imageView.contentMode = UIViewContentMode.scaleAspectFit
+        //初期画像の表示
+        imageView.image = images_[0]
+        
         print("デバッグ：　初期処理がされました")
         
         
@@ -166,15 +138,6 @@ class ViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:))))
         */
-        /*
-        self.playing_Flag = false
-        playStopButton.setTitle("再生", for: .normal)
-        if self.playing_Flag {
-            print("デバッグ　\(playing_Flag)")
-        }else{
-            print("デバッグ　\(playing_Flag)")
-        }
-         */
     }
 
     override func didReceiveMemoryWarning() {
@@ -184,13 +147,13 @@ class ViewController: UIViewController {
     
     //bigImageから戻った時
     @IBAction func unwind(_ segue: UIStoryboardSegue){
-        print("デバッグ：　戻りました。スライドショー：\(slideShowPlaying_Flag)")
+        print("デバッグ：　拡大画像から戻りました。スライドショー：\(slideShowPlaying_Flag)")
         if slideShowPlaying_Flag {
             //スライドショーを開始
             slideShow_Timer = Timer.scheduledTimer(
                 timeInterval: 2.0,
                 target: self,
-                selector: #selector(slideShowImage),
+                selector: #selector(nextImage),
                 userInfo: nil,
                 repeats: true
             )

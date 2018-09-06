@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var playing_Flag: Bool! = false
     var imageNumber = 0
     var image_Max_Number: Int!  //※枚数−１を設定する
-    var images_: [UIImage] = []
+//    var images_: [UIImage] = []
     var imageFileName = ["cat126IMGL6511_TP_V.jpg", "N825_pocyankawaii_TP_V.jpg", "nuko-2_TP_V.jpg", "nuko-8_TP_V.jpg", "tdog17030720_TP_V.jpg"]
     var slideShow_Timer: Timer!
     var slideShowPlaying_Flag: Bool! = false    //スライドショーを実行中かどうか
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //segueから遷移先のBigImageを取得する
         let bigImage: BigImage = segue.destination as! BigImage
-        bigImage.imageBig = self.images_[imageNumber]
+        bigImage.imageBig = UIImage(named: imageFileName[imageNumber])
     }
     
     //bigImageへ画面遷移
@@ -48,8 +48,8 @@ class ViewController: UIViewController {
     //画像の表示
     func previewImage(){
         print("デバッグ：　\(imageNumber)番目の画像を表示")
-
-        imageView.image = images_[imageNumber]
+        imageView.image = UIImage(named: imageFileName[imageNumber])
+        //修正：imageView.image = images_[imageNumber] ↑に変えて良い images_配列を作らずその場で指定
     }
     
     //再生・停止の切り替え
@@ -117,27 +117,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //画像の読み込み
+        //修正：画像の読み込み
+        /*
+         不要。
+         その場で読み込めば良い。
         for fileName in imageFileName {
             let image: UIImage! = UIImage(named: fileName)
             images_.append(image)
         }
+        */
+        
         image_Max_Number = imageFileName.count - 1
         print("デバッグ：　image_Max_Number = \(image_Max_Number)")
         
         //表示サイズの調整
         imageView.contentMode = UIViewContentMode.scaleAspectFit
         //初期画像の表示
-        imageView.image = images_[0]
+        imageView.image = UIImage(named: imageFileName[0])
         
         print("デバッグ：　初期処理がされました")
         
-        
-        //imageViewのタップをオンに
-        /*
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageViewTapped(_:))))
-        */
     }
 
     override func didReceiveMemoryWarning() {

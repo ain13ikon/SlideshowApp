@@ -10,8 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     var playing_Flag: Bool! = false
+    var imageNumber = 0
+    var image_Max: Int! = 4   //枚数−1
     
     @IBOutlet weak var playStopButton: UIButton!
+    
+    func previewImage(){
+        print("デバッグ：　\(imageNumber)番目の画像を表示")
+    }
     
     func changePlayStop(){
         if self.playing_Flag {
@@ -25,6 +31,24 @@ class ViewController: UIViewController {
 
     @IBAction func playStop(_ sender: UIButton) {
         changePlayStop()
+    }
+    
+    @IBAction func beforeImage() {
+        imageNumber -= 1
+        if imageNumber < 0 {
+            imageNumber = image_Max
+        }
+        
+        previewImage()
+    }
+    
+    @IBAction func nextImage() {
+        imageNumber += 1
+        if imageNumber > image_Max {
+            imageNumber = 0
+        }
+        
+        previewImage()
     }
     
     override func viewDidLoad() {

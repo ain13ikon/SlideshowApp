@@ -26,6 +26,9 @@
                                 <rect key="frame" x="251" y="493" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="進む&gt;"/>
+                                <connections>
+                                    <action selector="nextImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSO-vZ-7zj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUw-VB-XOW">
                                 <rect key="frame" x="145" y="493" width="31" height="30"/>
@@ -39,6 +42,9 @@
                                 <rect key="frame" x="16" y="493" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;戻る"/>
+                                <connections>
+                                    <action selector="beforeImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJ0-wR-1J7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

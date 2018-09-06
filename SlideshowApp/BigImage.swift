@@ -9,11 +9,18 @@
 import UIKit
 
 class BigImage: UIViewController {
-
+    
+    var imageBig: UIImage!
+    
+    @IBOutlet weak var bigImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //拡大画像の表示
+        bigImageView.image = imageBig
     }
 
     override func didReceiveMemoryWarning() {

@@ -19,8 +19,9 @@ class BigImage: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        //拡大画像の表示
-        bigImageView.image = imageBig
+        //拡大画像の表示//
+        bigImageView.contentMode = UIViewContentMode.scaleAspectFit    //サイズ調整
+        bigImageView.image = imageBig   //表示
     }
 
     override func didReceiveMemoryWarning() {

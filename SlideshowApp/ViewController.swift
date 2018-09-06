@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var images_: [UIImage] = []
     var imageFileName = ["cat126IMGL6511_TP_V.jpg", "N825_pocyankawaii_TP_V.jpg", "nuko-2_TP_V.jpg", "nuko-8_TP_V.jpg", "tdog17030720_TP_V.jpg"]
     var slideShow_Timer: Timer!
-    var slideShowPlaying_Flag: Bool! //スライドショーを実行中かどうか
+    var slideShowPlaying_Flag: Bool! = false    //スライドショーを実行中かどうか
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -61,6 +61,7 @@ class ViewController: UIViewController {
     //画像の表示
     func previewImage(){
         print("デバッグ：　\(imageNumber)番目の画像を表示")
+
         imageView.image = images_[imageNumber]
     }
     
@@ -151,8 +152,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //画像の読み込み
         initImageView()
-        slideShowPlaying_Flag = false
+        
+        //slideShowPlaying_Flag = false
+        //表示サイズの調整
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
         print("デバッグ：　初期処理がされました")
         
         
@@ -188,7 +193,9 @@ class ViewController: UIViewController {
                 selector: #selector(slideShowImage),
                 userInfo: nil,
                 repeats: true
-            )        }
+            )
+            print("デバッグ：　スライドショーを再開させました")
+        }
     }
 
 }
